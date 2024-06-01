@@ -1,0 +1,210 @@
+Low cost pixels: 180
+Medium cost pixels: 0
+High cost pixels: 0
+Done with 0
+__________
+Low cost pixels: 37
+Medium cost pixels: 105
+High cost pixels: 17
+Done with 1
+__________
+Low cost pixels: 102
+Medium cost pixels: 0
+High cost pixels: 3
+Done with 2
+__________
+Low cost pixels: 68
+Medium cost pixels: 2
+High cost pixels: 9
+Done with 3
+__________
+Low cost pixels: 124
+Medium cost pixels: 0
+High cost pixels: 0
+Done with 4
+__________
+Low cost pixels: 94
+Medium cost pixels: 0
+High cost pixels: 18
+Done with 5
+__________
+Low cost pixels: 38
+Medium cost pixels: 0
+High cost pixels: 38
+Done with 18
+__________
+Low cost pixels: 35
+Medium cost pixels: 0
+High cost pixels: 41
+Done with 19
+__________
+Low cost pixels: 83
+Medium cost pixels: 0
+High cost pixels: 0
+Done with 20
+__________
+Low cost pixels: 72
+Medium cost pixels: 0
+High cost pixels: 7
+Done with 21
+__________
+Low cost pixels: 631
+Medium cost pixels: 0
+High cost pixels: 79
+Done with 22
+__________
+Low cost pixels: 280
+Medium cost pixels: 0
+High cost pixels: 0
+Done with 23
+__________
+Low cost pixels: 187
+Medium cost pixels: 0
+High cost pixels: 69
+Done with 24
+__________
+Low cost pixels: 240
+Medium cost pixels: 0
+High cost pixels: 62
+Done with 25
+__________
+Low cost pixels: 181
+Medium cost pixels: 0
+High cost pixels: 0
+Done with 26
+__________
+Low cost pixels: 0
+Medium cost pixels: 0
+High cost pixels: 165
+Done with 27
+__________
+Low cost pixels: 102
+Medium cost pixels: 0
+High cost pixels: 3
+Done with 28
+__________
+Low cost pixels: 3
+Medium cost pixels: 0
+High cost pixels: 91
+Done with 29
+__________
+Low cost pixels: 26
+Medium cost pixels: 0
+High cost pixels: 75
+Done with 30
+__________
+Low cost pixels: 69
+Medium cost pixels: 0
+High cost pixels: 22
+Done with 31
+__________
+Low cost pixels: 36
+Medium cost pixels: 0
+High cost pixels: 39
+Done with 44
+__________
+Low cost pixels: 38
+Medium cost pixels: 0
+High cost pixels: 38
+Done with 45
+__________
+Low cost pixels: 13
+Medium cost pixels: 0
+High cost pixels: 69
+Done with 46
+__________
+Low cost pixels: 65
+Medium cost pixels: 0
+High cost pixels: 14
+Done with 47
+__________
+Low cost pixels: 274
+Medium cost pixels: 0
+High cost pixels: 386
+Done with 48
+__________
+Low cost pixels: 190
+Medium cost pixels: 0
+High cost pixels: 84
+Done with 49
+__________
+Low cost pixels: 110
+Medium cost pixels: 0
+High cost pixels: 147
+Done with 50
+__________
+Low cost pixels: 133
+Medium cost pixels: 0
+High cost pixels: 163
+Done with 51
+__________
+Low cost pixels: 21
+Medium cost pixels: 26
+High cost pixels: 0
+Done with 34 True
+__________
+Low cost pixels: 0
+Medium cost pixels: 46
+High cost pixels: 8
+Done with 35 False
+__________
+Low cost pixels: 0
+Medium cost pixels: 13
+High cost pixels: 15
+Done with 36 True
+__________
+Low cost pixels: 36
+Medium cost pixels: 7
+High cost pixels: 0
+Done with 37 False
+__________
+Low cost pixels: 50
+Medium cost pixels: 0
+High cost pixels: 0
+Done with 38 True
+__________
+Low cost pixels: 0
+Medium cost pixels: 0
+High cost pixels: 51
+Done with 39 False
+__________
+Low cost pixels: 182
+Medium cost pixels: 0
+High cost pixels: 0
+Done with 40 True
+__________
+Low cost pixels: 0
+Medium cost pixels: 0
+High cost pixels: 167
+Done with 41 False
+__________
+Low cost pixels: 8
+Medium cost pixels: 22
+High cost pixels: 47
+Done with 42 True
+__________
+Low cost pixels: 50
+Medium cost pixels: 18
+High cost pixels: 7
+Done with 43 False
+__________
+Low cost pixels: 47
+Medium cost pixels: 52
+High cost pixels: 0
+Done with 32 True
+__________
+Low cost pixels: 0
+Medium cost pixels: 48
+High cost pixels: 46
+Done with 33 False
+__________
+Low cost pixels: 48
+Medium cost pixels: 50
+High cost pixels: 0
+Done with 6 True
+__________
+Low cost pixels: 0
+Medium cost pixels: 59
+High cost pixels: 0
+Done with 7 False
+__________

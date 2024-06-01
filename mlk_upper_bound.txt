@@ -1,0 +1,20 @@
+Low cost pixels: 55
+Medium cost pixels: 0
+High cost pixels: 0
+Done with 8
+__________
+Low cost pixels: 0
+Medium cost pixels: 42
+High cost pixels: 8
+Done with 9
+__________
+Low cost pixels: 0
+Medium cost pixels: 35
+High cost pixels: 0
+Done with 10
+__________
+Low cost pixels: 38
+Medium cost pixels: 7
+High cost pixels: 0
+Done with 11
+__________

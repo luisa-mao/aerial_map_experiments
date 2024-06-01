@@ -1,0 +1,130 @@
+Low cost pixels: 179
+Medium cost pixels: 0
+High cost pixels: 0
+Done with 0
+__________
+Low cost pixels: 79
+Medium cost pixels: 66
+High cost pixels: 14
+Done with 1
+__________
+Low cost pixels: 97
+Medium cost pixels: 0
+High cost pixels: 0
+Done with 2
+__________
+Low cost pixels: 68
+Medium cost pixels: 2
+High cost pixels: 9
+Done with 3
+__________
+Low cost pixels: 127
+Medium cost pixels: 0
+High cost pixels: 0
+Done with 4
+__________
+Low cost pixels: 84
+Medium cost pixels: 0
+High cost pixels: 18
+Done with 5
+__________
+Low cost pixels: 55
+Medium cost pixels: 8
+High cost pixels: 0
+Done with 6
+__________
+Low cost pixels: 49
+Medium cost pixels: 47
+High cost pixels: 0
+Done with 7
+__________
+Low cost pixels: 55
+Medium cost pixels: 0
+High cost pixels: 0
+Done with 8
+__________
+Low cost pixels: 0
+Medium cost pixels: 42
+High cost pixels: 8
+Done with 9
+__________
+Low cost pixels: 0
+Medium cost pixels: 35
+High cost pixels: 0
+Done with 10
+__________
+Low cost pixels: 38
+Medium cost pixels: 7
+High cost pixels: 0
+Done with 11
+__________
+Low cost pixels: 50
+Medium cost pixels: 0
+High cost pixels: 0
+Done with 12
+__________
+Low cost pixels: 26
+Medium cost pixels: 0
+High cost pixels: 4
+Done with 13
+__________
+Low cost pixels: 172
+Medium cost pixels: 0
+High cost pixels: 0
+Done with 14
+__________
+Low cost pixels: 106
+Medium cost pixels: 0
+High cost pixels: 8
+Done with 15
+__________
+Low cost pixels: 119
+Medium cost pixels: 0
+High cost pixels: 0
+Done with 16
+__________
+Low cost pixels: 51
+Medium cost pixels: 18
+High cost pixels: 6
+Done with 17
+__________
+Low cost pixels: 117
+Medium cost pixels: 0
+High cost pixels: 0
+Done with 18
+__________
+Low cost pixels: 71
+Medium cost pixels: 0
+High cost pixels: 10
+Done with 19
+__________
+Low cost pixels: 82
+Medium cost pixels: 0
+High cost pixels: 0
+Done with 20
+__________
+Low cost pixels: 72
+Medium cost pixels: 0
+High cost pixels: 7
+Done with 21
+__________
+Low cost pixels: 646
+Medium cost pixels: 0
+High cost pixels: 0
+Done with 22
+__________
+Low cost pixels: 285
+Medium cost pixels: 0
+High cost pixels: 0
+Done with 23
+__________
+Low cost pixels: 196
+Medium cost pixels: 0
+High cost pixels: 60
+Done with 24
+__________
+Low cost pixels: 300
+Medium cost pixels: 0
+High cost pixels: 0
+Done with 25
+__________
