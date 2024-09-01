@@ -9,13 +9,15 @@ import os
 from sim_utils import increase_contrast, heuristic, histogram_mode_separation
 
 sys.path.append("..")
-# from bev_to_costmap import bev_img_to_tensor, bev_to_costmap_w_context, get_context_embedding
+import importlib
+from bev_to_costmap import bev_img_to_tensor, bev_to_costmap_w_context, get_context_embedding
+importlib.reload(sys.modules['bev_to_costmap'])
 from utils import patches_to_tensor
 
 # sys.path.append("/home/luisamao/classifier_baseline/")
 # from scripts.local_costmap import image_to_costmap
-sys.path.append("/home/luisamao/sterling/")
-from costmap_scripts.local_costmap import image_to_costmap
+# sys.path.append("/home/luisamao/sterling/")
+# from costmap_scripts.local_costmap import image_to_costmap
 
 
 class Simulator:
@@ -225,20 +227,20 @@ class Simulator:
                             # add rows of zeros to get 256 rows
                             padding = ((0, 22), (0, 0), (0,0))
                             view = np.pad(view, padding, mode='constant', constant_values=0)
-                            # bev_tensor = bev_img_to_tensor(view)
+                            bev_tensor = bev_img_to_tensor(view)
 
                             # print the shape of bev_tensor and self.context
                             # print(bev_tensor.shape, self.context.shape)
 
-                            # out = bev_to_costmap_w_context(bev_tensor, self.context)[:106,:]
+                            out = bev_to_costmap_w_context(bev_tensor, self.context)[:106,:]
                             
                             # reshape view to 749 x 1476
-                            view = cv2.resize(view, (1476, 749))
-                            out = image_to_costmap(view)
+                            # view = cv2.resize(view, (1476, 749))
+                            # out = image_to_costmap(view)
                             # resize view back down again
                             # view = cv2.resize(view, (256, 128))
                             # resize to 256 x 128
-                            out = cv2.resize(out, (256, 128))[:106,:]
+                            # out = cv2.resize(out, (256, 128))[:106,:]
                             if self.contrast and False:
                                 # out = increase_contrast(out, self.mask)
                                 out = histogram_mode_separation(out, self.mask)
@@ -253,7 +255,7 @@ class Simulator:
                 else:
                     continue
                 
-                tentative_g_score = g_score[current] + math.dist(current, neighbor) * (self.full_costmap[neighbor] / 255.0) * 5
+                tentative_g_score = g_score[current] + math.dist(current, neighbor) + (self.full_costmap[neighbor] / 255.0) * 5
                     
                 if neighbor not in g_score or tentative_g_score < g_score[neighbor]:
                     came_from[neighbor] = current
@@ -282,6 +284,10 @@ class Simulator:
             self.context = get_context_embedding(context_tensor)
             print("set new self.context", self.context.shape)
 
+            # pickle the context
+            # with open("context.pkl", 'wb') as f:
+            #     pkl.dump(self.context, f)
+
             # # save the patches
             # from torchvision.utils import make_grid
             # import matplotlib.pyplot as plt
@@ -295,8 +301,8 @@ class Simulator:
 
 
         # print start and end
-        print("Start:", start)
-        print("Goal:", goal)
+        # print("Start:", start)
+        # print("Goal:", goal)
 
         self.known_map = np.zeros(self.aerial_map.shape[:2])
         self.full_costmap = np.zeros(self.aerial_map.shape[:2])
@@ -325,14 +331,17 @@ class Simulator:
             "costmap": cost_map,
         }
 
-        # pickle this file
-        directory = "/scratch/luisamao/all_terrain/sterling_baseline/"
-        # count the number of files in this dir
-        num_files = len(os.listdir(directory))+8 
-        # pickle the file
-        # with open(f"{directory}log_{num_files}.pkl", 'wb') as f:
-        with open(f"{directory}{filename}.pkl", 'wb') as f:
-            pkl.dump(log_dict, f)
+        # # pickle this file
+        # directory = "/scratch/luisamao/all_terrain/ablation2.1/"
+        # # count the number of files in this dir
+        # # num_files = len(os.listdir(directory))+8 
+        # # pickle the file
+        # # with open(f"{directory}log_{num_files}.pkl", 'wb') as f:
+        # # print("HEREEEEE", f"{directory}{filename}.pkl")
+        # with open(f"{directory}{filename}.pkl", 'wb') as f:
+        #     pkl.dump(log_dict, f)
+        #     # pass
+        # print(f"Saved to {directory}{filename}.pkl")
 
 
         return path

@@ -1,0 +1,13 @@
+# Ignore directories
+pycache/
+contexts/
+full_costmaps/
+grid_maps/
+gt_maps/
+logs/
+maps/
+
+# Ignore file extensions
+*.txt
+*.ipynb
+*.png

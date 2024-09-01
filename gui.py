@@ -40,7 +40,7 @@ def on_image_click(event):
     # print(f"Clicked at pixel coordinates: ({x}, {y})")
 
     # # print the x and y coordinates in the original image
-    scale_factor = image.width() / resized_image.width()
+    scale_factor = image.size[0] / resized_image.width()
     true_x = int(x * scale_factor)
     true_y = int(y * scale_factor)
 
@@ -50,7 +50,7 @@ def on_image_click(event):
         # print(f"Clicked at image coordinates: ({true_x}, {true_y})")
 
         # print image width and resized image width
-        print(f"Image width: {image.width()}")
+        print(f"Image width: {image.size[0]}")
         print(f"Resized image width: {resized_image.width()}")
 
         # print scale factor
@@ -133,9 +133,14 @@ def on_undo_click():
         current_square = min(0, len(rectangles))
 
 # Load the image
-image_path = "/scratch/luisamao/all_terrain/aerial_maps/map5.2.png"
-# image_path = "/scratch/luisamao/all_terrain/aerial_maps/EER2.png"
-image = tk.PhotoImage(file=image_path)
+# image_path = "/scratch/luisamao/6-4-evening1/vis_images/22.png"
+# image_path = "/scratch/luisamao/6-4-evening1/vis_images/13.png"
+# image_path = "/scratch/luisamao/all_terrain/aerial_maps/map5.2.png"
+image_path = "/robodata/ARL_SARA/2024/GQ/AeroPlan/r2c2/Stitched/A.png"
+image = Image.open(image_path)
+# print image size
+# image = ImageTk.PhotoImage(image)
+# print("Image size", image.width(), image.height())
 
 # Load the image using PIL's Image class
 PIL_image = Image.open(image_path)
@@ -151,9 +156,10 @@ global resized_image
 def on_run_simulator_click():
 
     global image_path
+    global image
 
     # # print the x and y coordinates in the original image
-    scale_factor = image.width() / resized_image.width()
+    scale_factor = image.size[0] / resized_image.width()
     args = {
         "map_path": image_path,
         "mask_path": '../clean_mask.png',
@@ -179,21 +185,25 @@ def on_run_simulator_click():
 
 def resize_image(event):
     global resized_image  # Declare resized_image as global in the function
+    global image
     # Calculate the desired width and height for the image
     canvas_width = event.width
     canvas_height = event.height
-    image_width = image.width()
-    image_height = image.height()
+    # image_width = image.width()
+    # image_height = image.height()
+    image_width = image.size[0]
+    image_height = image.size[1]
 
     # Calculate the scaling factor to fit the image within the canvas
     scale_factor = min(canvas_width / image_width, canvas_height / image_height)
     new_width = int(image_width * scale_factor)
     new_height = int(image_height * scale_factor)
+    new_size = (new_width, new_height)
 
     
 
     # Resize the image
-    resized_image = image.subsample(int(1/scale_factor))
+    resized_image = ImageTk.PhotoImage(image.resize(new_size))
 
     # Display the image on the canvas
     canvas.delete("all")  # Clear the canvas
