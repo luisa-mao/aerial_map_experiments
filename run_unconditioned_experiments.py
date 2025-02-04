@@ -27,7 +27,7 @@ with open("contexts/concrete_grass_bush_mulch.pkl", "rb") as f:
     context_tensor = pickle.load(f)
 with open("contexts/c1.pkl", "rb") as f:
     context_tensor1 = pickle.load(f)
-# print(context_tensor.shape)
+print(context_tensor.shape)
 
 def run_simulator(i, context = None):
     log = filenames[i]

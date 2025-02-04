@@ -175,7 +175,32 @@ class Simulator:
                         self.known_map[pixel[0], pixel[1]] = 255
                         if local_costmap[j][i] > 0:
                             self.full_costmap[pixel[0], pixel[1]] = local_costmap[j][i]
-
+    def image_to_costmap(self, context):
+        self.full_costmap = np.zeros(self.aerial_map.shape[:2])
+        self.known_map = np.zeros(self.aerial_map.shape[:2])
+        self.context = get_context_embedding(context)
+        image = self.aerial_map
+        yaws = [0, -90, -270, 180, -45, (90+45), -(90+45), 45]
+        # costmap = np.zeros(image.shape[:2])
+        bev_height = self.mask.shape[0]
+        # loop through the map's pixels at a stride of bev_height*2
+        for i in range(bev_height, image.shape[1], bev_height*2):
+            for j in range(bev_height, image.shape[0], bev_height*2):
+                # draw a large circle at i, j on self.full_costmap
+                # cv2.circle(self.full_costmap, (i, j), 5, (255, 255, 255), -1)
+                for yaw in yaws:
+                    view = self.get_view(i, j, yaw)
+                    # add rows of zeros to get 256 rows
+                    padding = ((0, 22), (0, 0), (0,0))
+                    view = np.pad(view, padding, mode='constant', constant_values=0)
+                    bev_tensor = bev_img_to_tensor(view)
+                    out = bev_to_costmap_w_context(bev_tensor, self.context)[:106,:]*255
+                    self.expand_known_map(out, i, j, yaw)
+            #         break
+            #     break
+            # break
+        # write the costmap to a file
+        cv2.imwrite("costmap.png", self.full_costmap)
 
     def astar(self, start, goal):        
         count = 0
@@ -266,8 +291,8 @@ class Simulator:
 
 
     # start and goal are in column, row order
-    def run(self, start=(320,440), goal=(192, 572), patch_centers = None, filename = None):
-        context_tensor = None
+    def run(self, start=(320,440), goal=(192, 572), patch_centers = None, filename = None, context_tensor = None):
+        # context_tensor = None
         PATCH_WIDTH = 32
         patches = []
         if patch_centers is not None:
@@ -283,7 +308,8 @@ class Simulator:
             context_tensor = patches_to_tensor(patches)
             self.context = get_context_embedding(context_tensor)
             print("set new self.context", self.context.shape)
-
+        elif context_tensor is not None:
+            self.context = get_context_embedding(context_tensor)
             # pickle the context
             # with open("context.pkl", 'wb') as f:
             #     pkl.dump(self.context, f)
